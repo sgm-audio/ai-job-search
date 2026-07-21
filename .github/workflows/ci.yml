@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  typecheck-clis:
+    name: Typecheck ${{ matrix.skill }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        skill:
+          - jobbank-search
+          - jobdanmark-search
+          - jobindex-search
+          - jobnet-search
+          - linkedin-search
+    defaults:
+      run:
+        working-directory: .agents/skills/${{ matrix.skill }}/cli
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install
+        run: bun install
+      - name: Typecheck
+        run: bun run typecheck
+
+  python-syntax:
+    name: Python syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Compile
+        run: |
+          python -m py_compile salary_lookup.py
+          python -m py_compile tools/convert_salary_excel.py
