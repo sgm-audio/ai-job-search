@@ -2,6 +2,12 @@
   <img src="claude_animation.gif" alt="AI Job Search Assistant" width="200">
 </p>
 
+<p align="center">
+  <a href="https://github.com/sgm-audio/ai-job-search/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/sgm-audio/ai-job-search/ci.yml?branch=master&logo=github&label=CI" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/sgm-audio/ai-job-search" alt="License"></a>
+</p>
+
+
 # AI Job Search
 
 An AI-powered job application framework built on [Claude Code](https://claude.com/claude-code). Fork it, fill in your profile, and let Claude evaluate job postings, tailor your CV, write cover letters, and prepare you for interviews.
