@@ -10,6 +10,8 @@
 
 # AI Job Search
 
+> This is my fork of [ai-job-search-dev/ai-job-search](https://github.com/ai-job-search-dev/ai-job-search) by Mads Lorentzen and contributors (MIT). The only thing I've added is a CI workflow that typechecks the Bun CLIs and syntax-checks the Python helper. Everything else is upstream, so send issues and PRs there.
+
 An AI-powered job application framework built on [Claude Code](https://claude.com/claude-code). Fork it, fill in your profile, and let Claude evaluate job postings, tailor your CV, write cover letters, and prepare you for interviews.
 
 > Note: This is an independent open-source project and is not affiliated with, endorsed by, sponsored by, or maintained by Anthropic. Anthropic and Claude Code are referenced only to describe the toolchain this workflow uses.
